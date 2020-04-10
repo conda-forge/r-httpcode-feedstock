@@ -1,4 +1,4 @@
-{% set version = '0.2.0' %}
+{% set version = "0.3.0" %}
 
 package:
   name: r-httpcode
@@ -9,12 +9,12 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/httpcode_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/httpcode/httpcode_{{ version }}.tar.gz
-  sha256: fbc1853db742a2cc1df11285cf27ce2ea43bc0ba5f7d393ee96c7e0ee328681a
+  sha256: 593a030a4f94c3df8c15576837c17344701bac023ae108783d0f06c476062f76
 
 build:
-  number: 1001
+  number: 0
   script: R CMD INSTALL --build .
-  skip: True  # [win32]
+  skip: true  # [win32]
   rpaths:
     - lib/R/lib/
     - lib/
@@ -35,9 +35,8 @@ about:
   home: https://cran.r-project.org/web/packages/httpcode
   license: MIT
   license_file: LICENSE
-  summary: Find and explain the meaning of 'HTTP' status codes. Functions included for searching
-    for codes by full or partial number, by message, and get appropriate dog and cat
-    images for many status codes.
+  summary: Find and explain the meaning of 'HTTP' status codes. Functions included for searching for codes by full or partial number, by message, and get appropriate
+    dog and cat images for many status codes.
 
 extra:
   recipe-maintainers:
