@@ -13,7 +13,8 @@ source:
 
 build:
   number: 1
-  script: R CMD INSTALL --build .
+  script: 'R CMD INSTALL --build . ${R_ARGS}'  # [not win]
+  script: R CMD INSTALL --build . ${R_ARGS}  # [win]
   skip: true  # [win32]
   rpaths:
     - lib/R/lib/
@@ -22,6 +23,8 @@ build:
 
 requirements:
   build:
+    - cross-r-base {{ r_base }}  # [build_platform != target_platform]
+  host:
     - r-base
   run:
     - r-base
