@@ -12,7 +12,7 @@ source:
   sha256: 593a030a4f94c3df8c15576837c17344701bac023ae108783d0f06c476062f76
 
 build:
-  number: 1
+  number: 2
   script: 'R CMD INSTALL --build . ${R_ARGS}'  # [not win]
   script: R CMD INSTALL --build . ${R_ARGS}  # [win]
   skip: true  # [win32]
